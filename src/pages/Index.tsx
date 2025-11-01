@@ -1,10 +1,13 @@
-import { Home, Dumbbell, BookOpen, Leaf, Gamepad2, Users } from "lucide-react";
+import { Home, Dumbbell, BookOpen, Leaf, Gamepad2, Users, LogIn, Rocket } from "lucide-react";
 import { ModuleCard } from "@/components/ModuleCard";
 import { BujjiSection } from "@/components/BujjiSection";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-cosmic.jpg";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const modules = [
     {
       title: "LifeVerse",
@@ -66,11 +69,22 @@ const Index = () => {
             and entertainment—all in one seamless experience.
           </p>
           <div className="flex gap-4 justify-center animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-500">
-            <Button size="lg" className="bg-gradient-cosmic hover:shadow-glow-primary transition-all duration-300 text-lg px-8">
-              Explore UniVerse
+            <Button 
+              size="lg" 
+              className="bg-gradient-cosmic hover:shadow-glow-primary transition-all duration-300 text-lg px-8"
+              onClick={() => navigate("/auth")}
+            >
+              <LogIn className="w-5 h-5 mr-2" />
+              Sign In
             </Button>
-            <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10 text-lg px-8">
-              Learn More
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary/50 hover:bg-primary/10 text-lg px-8"
+              onClick={() => navigate("/dashboard")}
+            >
+              <Rocket className="w-5 h-5 mr-2" />
+              Activate Bujji
             </Button>
           </div>
         </div>
@@ -122,7 +136,11 @@ const Index = () => {
             <p className="text-xl text-muted-foreground">
               Join thousands of users already living smarter with UniVerse
             </p>
-            <Button size="lg" className="bg-gradient-cosmic hover:shadow-glow-primary transition-all duration-300 text-lg px-12">
+            <Button 
+              size="lg" 
+              className="bg-gradient-cosmic hover:shadow-glow-primary transition-all duration-300 text-lg px-12"
+              onClick={() => navigate("/auth")}
+            >
               Get Started Free
             </Button>
           </div>
