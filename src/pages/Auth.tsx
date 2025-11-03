@@ -54,8 +54,8 @@ const Auth = () => {
     } else {
       setOtpSent(true);
       toast({
-        title: "OTP Sent!",
-        description: "Check your email for the verification code.",
+        title: "OTP Sent! 📧",
+        description: "Check your email for the 6-digit verification code.",
       });
     }
     setLoading(false);
@@ -76,6 +76,11 @@ const Auth = () => {
         title: "Error",
         description: error.message,
         variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "OTP verified successfully! 💫",
+        description: "Bujji AI activated. Welcome aboard!",
       });
     }
     setLoading(false);

@@ -16,9 +16,15 @@ const Dashboard = () => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (!session) {
         navigate("/auth");
+      } else {
+        // Welcome message on login
+        toast({
+          title: "Hey Boss, welcome back! 💫",
+          description: "I'm Bujji — ready when you are. Just say 'Hey Bujji!' to begin.",
+        });
       }
     });
-  }, [navigate]);
+  }, [navigate, toast]);
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
