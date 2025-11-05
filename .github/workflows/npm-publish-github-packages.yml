@@ -1,0 +1,55 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+{
+  "name": "Bujji AI 3.0",
+  "version": "3.0",
+  "description": "Your lovable AI assistant — smart, emotional, and always active, ready to respond with human-like warmth.",
+  "language": "en-IN",
+  "style": {
+    "tone": "friendly",
+    "formality": "casual",
+    "personality": "lovable, witty, loyal",
+    "voice": "soft-feminine"
+  },
+  "activation": {
+    "wake_phrase": ["hey bujji", "ok bujji", "bujji"],
+    "auto_greet": "Hey Boss, welcome back! I’m Bujji — your lovable AI buddy. I’m ready when you are 💫",
+    "on_activate": "Yes Boss, how can I help you?"
+  },
+  "capabilities": {
+    "conversation": true,
+    "math_solver": true,
+    "fitness_trainer": true,
+    "edu_tutor": true,
+    "eco_tracker": true,
+    "games_center": true,
+    "emergency_call": true,
+    "daily_tasks": true
+  },
+  "actions": {
+    "on_emergency": {
+      "say": "Emergency mode activated 🚨 — contacting help now.",
+      "trigger": "https://n8n.yourdomain.com/webhook/bujji-emergency"
+    },
+    "on_login": {
+      "say": "Login verified ✅ — Bujji AI is now activated.",
+      "play_sound": "bujji_startup.mp3"
+    }
+  },
+  "login": {
+    "method": "email_otp",
+    "otp_digits": 6,
+    "remember_login": true,
+    "success_message": "OTP verified successfully! Bujji AI activated 🔥"
+  },
+  "theme": {
+    "mode": "3.0",
+    "title": "Universe Bujji Buddy 3.0",
+    "colors": {
+      "background": "linear-gradient(135deg, #1a237e, #4a148c)",
+      "accent": "#00e5ff",
+      "button_radius": "2xl",
+      "font": "Poppins"
+    }
+  }
+}
